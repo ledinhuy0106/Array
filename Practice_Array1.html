@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tạo và thao tác với mảng</title>
+</head>
+<body>
+<input type="text" id="nhapmang" value="">
+<button type="button" id="nhap" onclick="nhap_mang()">Nhập</button>
+<input id="hienthi" type="submit" onclick="hien_thi_mang()" value="Hiển thị">
+<hr width="500" align="left">
+<script>
+  let mang = []
+  function nhap_mang() {
+    let them = document.getElementById("nhapmang").value
+    mang.push(them)
+    alert("Thêm thành công")
+  }
+
+  function hien_thi_mang() {
+    for (let i=0; i<mang.length;i++){
+      document.write("Mang["+i+"] = "+mang[i]+"<br>")
+    }
+  }
+</script>
+</body>
+</html>
