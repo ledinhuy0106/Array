@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6 </title>
+</head>
+<body>
+<br><input type="button" value="Bài 6" onclick="bai6()">tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ )
+<script>
+    function bai6() {
+        let Arr = new Array(prompt("Nhập vào một chuỗi"))
+        let Array2  = []
+        document.write("Mảng gồm ["+Array+"]<br>")
+        for (let i=0; i<Arr.length ; i++){
+            for (let j=0; j<Arr[i].length; j++){
+                if(Arr[i][j] == "-"){
+                    Arr[i][j] = "_"
+                    Array2.push("_")
+                }else{
+                    Array2.push(Arr[i][j])
+                }
+            }
+        }
+        document.write("Mảng sửa gồm ["+Array2.join("")+"]<br>")
+    }
+</script>
+</body>
+</html>
