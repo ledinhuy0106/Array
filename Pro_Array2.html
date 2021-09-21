@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 02</title>
+</head>
+<body>
+
+<input type="button" value="Bài 1" onclick="bai1()"> Viết chương trình khởi tạo mảng 2 chiều
+<br><input type="button" value="Bài 2" onclick="bai2()">in các ký tự trong một mảng theo thứ tự đảo ngược
+<br><input type="button" value="Bài 3" onclick="bai3()">chương trình khai báo một mảng ký tự và kích thước của mảng
+<br><input type="button" value="Bài 4" onclick="bai4()">Viết một chương trình để đếm số từ trong một chuỗi
+<br><input type="button" value="Bài 5" onclick="bai5()">kiểm tra xem hai chuỗi có giống nhau hay không.
+<br><input type="button" value="Bài 6" onclick="bai6()">tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ )
+
+<script>
+    function bai1() {
+        let mangso = [
+            [1, 2, 1, 24],
+            [8, 11, 9, 4],
+            [7, 0, 7, 27],
+            [7, 4, 28, 14],
+            [3, 10, 26, 7]
+        ]
+        for (let i=0 ;i<mangso.length; i++){
+            document.write("Rows: "+ (i+1)+ "<br>")
+            for (let j=0; j<mangso[i].length; j++){
+                document.write("\""+mangso[i][j]+ "\" <br>")
+            }
+
+            document.write("<br>")
+        }
+    }
+
+
+    function bai2() {
+        let mang = [1,5,"a","c","d",6,7,"z","w",10,"213"]
+        let trunggian
+        document.write("Mảng = ["+mang+"]<br>")
+        for (let i=0; i<Math.floor((mang.length)/2);i++){
+            for (let j = Math.ceil((mang.length)/2); j<(mang.length);j++){
+                trunggian = mang[i]
+                mang[i] = mang[j]
+                mang[j] = trunggian
+            }
+        }
+        document.write("Mảng đổi chiều = ["+mang+"]")
+    }
+
+
+    function bai3() {
+        let mang = [4, "Hello", 9, "Bông zua",18,22,"avx",1]
+        let dem = 0
+        document.write("Mảng gồm = ["+mang+"]<br>")
+        for (let i=0; i<mang.length; i++){
+            if (mang[i] %2 == 0 ||mang[i] %2 == 1){
+                dem ++
+            }
+        }
+        document.write("Các ký tự số trong mảng là "+dem+" số<br>")
+    }
+
+    function bai4() {
+        let mang = ["Xin chào", "Hello", "Ní hảo", "Bông zua"]
+
+        document.write("Mảng gồm = ["+mang+"]<br>")
+        for (let i=0; i<mang.length; i++){
+            document.write("Chuôi \""+mang[i]+"\" có "+mang[i].length+" ký tự trong mảng <br>")
+
+        }
+
+    }
+
+    function bai5() {
+        let chuoi1 = prompt("Nhập chuỗi 1")
+        let chuoi2 = prompt("Nhập chuỗi 2")
+        let sosanh = true
+        document.write("Chuỗi 1 : "+chuoi1+" <br>"+ "Chuỗi 2 : "+chuoi2+" <br>")
+        if (chuoi1.length != chuoi2.length) {
+            document.write("2 chuỗi không giống nhau<br>")
+        }else{
+            for (let i=0; i<chuoi1.length ; i++){
+                for (let j=0; j<chuoi2.length ; j++){
+                    if (chuoi1[i] == chuoi2[j]){
+                        sosanh = true
+                    }else{
+                        sosanh = false
+                    }
+                }
+            }
+            if (sosanh == false){
+                document.write("2 chuỗi không giống nhau<br>")
+            }else{
+                document.write("2 chuỗi giống nhau<br>")
+            }
+        }
+
+    }
+    
+    function bai6() {
+        let mang = new Array(prompt("Nhập vào một chuỗi"))
+        let mangFix = []
+
+        document.write("Mảng gồm ["+mang+"]<br>")
+        for (let i=0; i<mang.length ; i++){
+            for (let j=0; j<mang[i].length; j++){
+                if(mang[i][j] == "-"){
+                    mang[i][j] = "_"
+                    mangFix.push("_")
+                }else{
+                    mangFix.push(mang[i][j])
+                }
+
+            }
+        }
+        document.write("Mảng sửa gồm ["+mangFix.join("")+"]<br>")
+    }
+</script>
+</body>
+</html>
