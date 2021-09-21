@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị trong mảng</title>
+</head>
+<body>
+<script>
+    let nhap = prompt("Nhập tìm kiếm vd abcd1234")
+    let boo = false
+    let mang = ["a","c","e","g","t","1","2","3"]
+    for (let i =0; i< mang.length; i++){
+        if (mang[i] == nhap){
+            boo = true
+            alert("Bạn đã tìm được mảng tại mang["+i+"]")
+        }
+    }
+    if(boo == false){
+        alert("Ko có trong mảng")
+    }
+
+</script>
+</body>
+</html>

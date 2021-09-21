@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm sô lớn nhất</title>
+</head>
+<body>
+<script>
+    let mang = [33,55,12,123,29,44]
+    let max = mang[0]
+    let index = 0
+    document.write(mang.join(" - ")+"<br>")
+    for (let i=0; i<mang.length; i++){
+        if(max<mang[i]){
+            index = max
+            max = mang[i]
+        }
+    }
+    document.write("Số lớn nhất trong mảng là "+max)
+</script>
+</body>
+</html>

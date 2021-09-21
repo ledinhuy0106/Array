@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Đảo ngược các phần tử trong mảng</title>
+</head>
+<body>
+<script>
+  let mangX = [4,2,12,3,8,6]
+  let dau=0, cuoi = mangX.length-1;
+  let trunggian
+  document.write("Mảng [" + mangX+ "] <br>")
+  for (let i=dau; i<=cuoi; i++){
+    trunggian = mangX[dau]
+    mangX[dau] = mangX[cuoi]
+    mangX[cuoi] = trunggian
+    dau++
+    cuoi--
+  }
+  document.write("Đảo ngược [" + mangX+ "]")
+</script>
+</body>
+</html>
